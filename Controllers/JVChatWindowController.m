@@ -621,8 +621,9 @@ NSString *JVChatViewPboardType = @"Colloquy Chat View v1.0 pasteboard type";
 	if( item == selectItem )
 		[self _refreshSelectionMenu];
 
-	if( selectItem )
-		[chatViewsOutlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:[chatViewsOutlineView rowForItem:selectItem]] byExtendingSelection:NO];
+// This causes an annoying bug where the selected room will "snap back" after quickly e.g. selecting cmd-up-up-arrow 
+//	if( selectItem )
+//		[chatViewsOutlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:[chatViewsOutlineView rowForItem:selectItem]] byExtendingSelection:NO];
 }
 
 - (BOOL) isListItemExpanded:(id <JVChatListItem>) item {
